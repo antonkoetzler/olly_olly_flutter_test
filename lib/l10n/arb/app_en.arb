@@ -1,0 +1,6 @@
+{
+  "loginSignupScreenLoginUsernameOrEmailLabel": "Username or email",
+  "loginSignupScreenLoginPasswordLabel": "Password",
+  "loginSignupScreenLoginActionButtonLabel": "Sign In",
+  "loginSignupScreenSignupActionButtonLabel": "Sign Up"
+}

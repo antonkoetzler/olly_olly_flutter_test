@@ -1,0 +1,6 @@
+{
+  "loginSignupScreenLoginUsernameOrEmailLabel": "Nome de usuário ou e-mail",
+  "loginSignupScreenLoginPasswordLabel": "Senha",
+  "loginSignupScreenLoginActionButtonLabel": "Entrar",
+  "loginSignupScreenSignupActionButtonLabel": "Cadastrar"
+}
