@@ -12,16 +12,18 @@ final class ButtonThemeExtension extends ThemeExtension<ButtonThemeExtension> {
     required this.border,
     required this.borderRadius,
     required this.contentPadding,
+    required this.textStyle,
   });
 
   /// Builder constructor.
-  ButtonThemeExtension.builder(ColorScheme colorScheme)
+  ButtonThemeExtension.builder(ColorScheme colorScheme, TextTheme textTheme)
     : idleBackgroundColor = colorScheme.primary,
       hoverBackgroundColor = colorScheme.onPrimary.withValues(alpha: 0.5),
       clickBackgroundColor = colorScheme.onPrimary.withValues(alpha: 0.25),
       border = Border.all(width: kBorderWidth, color: colorScheme.onPrimary),
       borderRadius = BorderRadius.circular(kBorderRadius),
-      contentPadding = const EdgeInsets.all(kMultiplier);
+      contentPadding = const EdgeInsets.all(kMultiplier),
+      textStyle = textTheme.bodyMedium!;
 
   /// [TapStatusEnum.idle] background [Color].
   final Color idleBackgroundColor;
@@ -41,6 +43,9 @@ final class ButtonThemeExtension extends ThemeExtension<ButtonThemeExtension> {
   /// Content padding.
   final EdgeInsets contentPadding;
 
+  /// Text style.
+  final TextStyle textStyle;
+
   /// Copy with.
   @override
   ButtonThemeExtension copyWith({
@@ -50,6 +55,7 @@ final class ButtonThemeExtension extends ThemeExtension<ButtonThemeExtension> {
     BoxBorder? border,
     BorderRadius? borderRadius,
     EdgeInsets? contentPadding,
+    TextStyle? textStyle,
   }) {
     return ButtonThemeExtension(
       idleBackgroundColor: idleBackgroundColor ?? this.idleBackgroundColor,
@@ -58,6 +64,7 @@ final class ButtonThemeExtension extends ThemeExtension<ButtonThemeExtension> {
       border: border ?? this.border,
       borderRadius: borderRadius ?? this.borderRadius,
       contentPadding: contentPadding ?? this.contentPadding,
+      textStyle: textStyle ?? this.textStyle,
     );
   }
 
@@ -72,6 +79,7 @@ final class ButtonThemeExtension extends ThemeExtension<ButtonThemeExtension> {
       border: BoxBorder.lerp(border, other.border, t),
       borderRadius: BorderRadius.lerp(borderRadius, other.borderRadius, t),
       contentPadding: EdgeInsets.lerp(contentPadding, other.contentPadding, t),
+      textStyle: TextStyle.lerp(textStyle, other.textStyle, t),
     );
   }
 }

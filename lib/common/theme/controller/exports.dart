@@ -1,1 +1,1 @@
-export 'theme_mode_controller.dart';
+export 'theme_controller.dart';

@@ -9,14 +9,14 @@ final class App extends StatelessWidget {
 
   /// Build function.
   @override
-  Widget build(_) {
-    final themeModeController = getIt<ThemeModeController>();
+  Widget build(context) {
+    final themeController = getIt<ThemeController>();
 
     return ValueListenableBuilder(
-      valueListenable: themeModeController,
-      builder: (_, themeMode, _) {
+      valueListenable: themeController,
+      builder: (_, isDarkmode, _) {
         return MaterialApp.router(
-          themeMode: themeMode,
+          themeMode: isDarkmode ? ThemeMode.dark : ThemeMode.light,
           theme: createThemeData(isDarkMode: false),
           darkTheme: createThemeData(isDarkMode: true),
           routerConfig: getIt<AppRouter>().router,

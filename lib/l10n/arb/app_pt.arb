@@ -1,6 +1,126 @@
 {
-  "loginSignupScreenLoginUsernameOrEmailLabel": "Nome de usuário ou e-mail",
+  "loginSignupScreenLoginNameLabel": "Nome",
   "loginSignupScreenLoginPasswordLabel": "Senha",
   "loginSignupScreenLoginActionButtonLabel": "Entrar",
-  "loginSignupScreenSignupActionButtonLabel": "Cadastrar"
+  "loginSignupScreenSignupActionButtonLabel": "Registrar",
+  "loginSignupScreenLoginFormSwitcherButtonLabel": "Cadastrar",
+  "loginSignupScreenSignupFormSwitcherButtonLabel": "Entrar",
+  "loginSignupScreenLoginNameValidator": "Nome é obrigatório",
+  "loginSignupScreenLoginPasswordValidator": "Senha é obrigatória",
+  "loginSignupScreenSignupNameLabel": "Nome",
+  "loginSignupScreenSignupPasswordLabel": "Senha",
+  "loginSignupScreenSignupConfirmPasswordLabel": "Confirmar senha",
+  "loginSignupScreenSignupNameValidator": "Nome é obrigatório",
+  "loginSignupScreenSignupNameInvalidValidator": "O nome deve conter apenas letras e números",
+  "loginSignupScreenSignupPasswordValidator": "Senha é obrigatória",
+  "loginSignupScreenSignupConfirmPasswordValidator": "As senhas não coincidem",
+  "loginSignupScreenSuccessMessage": "Login realizado com sucesso!",
+
+  "homeScreenAppBarTitle": "Bem-vindo, {name}",
+  "@homeScreenAppBarTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "homeScreenLocationPermissionStatusDisabledLabel": "Os serviços de localização estão desabilitados",
+  "homeScreenLocationPermissionStatusDeniedLabel": "As permissões de localização estão negadas",
+  "homeScreenLocationPermissionStatusDeniedForeverLabel": "As permissões de localização estão permanentemente negadas",
+  "homeScreenErrorRetryButtonText": "Tentar novamente",
+
+  "errorInvalidUser": "Usuário inválido.",
+  "errorUserAlreadyExists": "Usuário já existe.",
+  "errorLoginFailed": "Falha no login: {error}",
+  "@errorLoginFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorSignupFailed": "Falha no cadastro: {error}",
+  "@errorSignupFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorLogoutFailed": "Falha no logout: {error}",
+  "@errorLogoutFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorInvalidResponseFormat": "Formato de resposta inválido: dados de current_weather ausentes",
+  "errorFailedToParseWeatherData": "Falha ao analisar dados meteorológicos: {error}",
+  "@errorFailedToParseWeatherData": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorFailedToLoadWeatherData": "Falha ao carregar dados meteorológicos: HTTP {statusCode}",
+  "@errorFailedToLoadWeatherData": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
+  "errorNetworkError": "Erro de rede: {error}",
+  "@errorNetworkError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorUnexpectedError": "Erro inesperado: {error}",
+  "@errorUnexpectedError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorUnexpectedErrorOccurred": "Ocorreu um erro inesperado: {error}",
+  "@errorUnexpectedErrorOccurred": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+
+  "weatherConditionSunny": "Ensolarado",
+  "weatherConditionPartlyCloudy": "Parcialmente Nublado",
+  "weatherConditionCloudy": "Nublado",
+  "weatherConditionFoggy": "Nebuloso",
+  "weatherConditionDrizzle": "Garoa",
+  "weatherConditionRain": "Chovendo",
+  "weatherConditionSnow": "Nevando",
+  "weatherConditionThunderstorm": "Tempestade",
+  "weatherConditionUnknown": "Desconhecido",
+
+  "homeScreenTemperatureUnit": "°C",
+  "homeScreenConditionTitle": "Condição: ",
+  "homeScreenMaxTemperatureTitle": "Máx: ",
+  "homeScreenMinTemperatureTitle": "Mín: ",
+  "homeScreenTemperatureSeparator": " / ",
+  "homeScreenWindSpeedTitle": "Velocidade do Vento: ",
+  "homeScreenWindSpeedUnit": " km/h",
+  "homeScreenHumidityTitle": "Umidade: ",
+  "homeScreenHumidityUnit": "%",
+  "homeScreenPrecipitationTitle": "Precipitação: ",
+  "homeScreenPrecipitationUnit": " mm",
+  "homeScreenPrecipitationSumTitle": "Soma de Precipitação: ",
+  "homeScreenPrecipitationSumUnit": " mm",
+  "homeScreenCloudCoverTitle": "Cobertura de Nuvens: ",
+  "homeScreenCloudCoverUnit": "%",
+  "homeScreenWeatherCodeTitle": "Código Meteorológico: "
 }

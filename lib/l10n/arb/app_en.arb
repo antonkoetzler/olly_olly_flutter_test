@@ -1,6 +1,126 @@
 {
-  "loginSignupScreenLoginUsernameOrEmailLabel": "Username or email",
+  "loginSignupScreenLoginNameLabel": "Name",
   "loginSignupScreenLoginPasswordLabel": "Password",
-  "loginSignupScreenLoginActionButtonLabel": "Sign In",
-  "loginSignupScreenSignupActionButtonLabel": "Sign Up"
+  "loginSignupScreenLoginActionButtonLabel": "Enter",
+  "loginSignupScreenSignupActionButtonLabel": "Register",
+  "loginSignupScreenLoginFormSwitcherButtonLabel": "Signup",
+  "loginSignupScreenSignupFormSwitcherButtonLabel": "Login",
+  "loginSignupScreenLoginNameValidator": "Name is required",
+  "loginSignupScreenLoginPasswordValidator": "Password is required",
+  "loginSignupScreenSignupNameLabel": "Name",
+  "loginSignupScreenSignupPasswordLabel": "Password",
+  "loginSignupScreenSignupConfirmPasswordLabel": "Confirm password",
+  "loginSignupScreenSignupNameValidator": "Name is required",
+  "loginSignupScreenSignupNameInvalidValidator": "Name must contain only letters and numbers",
+  "loginSignupScreenSignupPasswordValidator": "Password is required",
+  "loginSignupScreenSignupConfirmPasswordValidator": "Passwords do not match",
+  "loginSignupScreenSuccessMessage": "Logged in successfully!",
+
+  "homeScreenAppBarTitle": "Welcome, {name}",
+  "@homeScreenAppBarTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "homeScreenLocationPermissionStatusDisabledLabel": "Location services are disabled",
+  "homeScreenLocationPermissionStatusDeniedLabel": "Location permissions are denied",
+  "homeScreenLocationPermissionStatusDeniedForeverLabel": "Location permissions are permanently denied",
+  "homeScreenErrorRetryButtonText": "Retry",
+
+  "errorInvalidUser": "Invalid user.",
+  "errorUserAlreadyExists": "User already exists.",
+  "errorLoginFailed": "Login failed: {error}",
+  "@errorLoginFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorSignupFailed": "Signup failed: {error}",
+  "@errorSignupFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorLogoutFailed": "Logout failed: {error}",
+  "@errorLogoutFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorInvalidResponseFormat": "Invalid response format: missing current_weather data",
+  "errorFailedToParseWeatherData": "Failed to parse weather data: {error}",
+  "@errorFailedToParseWeatherData": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorFailedToLoadWeatherData": "Failed to load weather data: HTTP {statusCode}",
+  "@errorFailedToLoadWeatherData": {
+    "placeholders": {
+      "statusCode": {
+        "type": "int"
+      }
+    }
+  },
+  "errorNetworkError": "Network error: {error}",
+  "@errorNetworkError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorUnexpectedError": "Unexpected error: {error}",
+  "@errorUnexpectedError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorUnexpectedErrorOccurred": "An unexpected error occurred: {error}",
+  "@errorUnexpectedErrorOccurred": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+
+  "weatherConditionSunny": "Sunny",
+  "weatherConditionPartlyCloudy": "Partly Cloudy",
+  "weatherConditionCloudy": "Cloudy",
+  "weatherConditionFoggy": "Foggy",
+  "weatherConditionDrizzle": "Drizzle",
+  "weatherConditionRain": "Raining",
+  "weatherConditionSnow": "Snowing",
+  "weatherConditionThunderstorm": "Thunderstorm",
+  "weatherConditionUnknown": "Unknown",
+
+  "homeScreenTemperatureUnit": "°C",
+  "homeScreenConditionTitle": "Condition: ",
+  "homeScreenMaxTemperatureTitle": "Max: ",
+  "homeScreenMinTemperatureTitle": "Min: ",
+  "homeScreenTemperatureSeparator": " / ",
+  "homeScreenWindSpeedTitle": "Wind Speed: ",
+  "homeScreenWindSpeedUnit": " km/h",
+  "homeScreenHumidityTitle": "Humidity: ",
+  "homeScreenHumidityUnit": "%",
+  "homeScreenPrecipitationTitle": "Precipitation: ",
+  "homeScreenPrecipitationUnit": " mm",
+  "homeScreenPrecipitationSumTitle": "Precipitation Sum: ",
+  "homeScreenPrecipitationSumUnit": " mm",
+  "homeScreenCloudCoverTitle": "Cloud Cover: ",
+  "homeScreenCloudCoverUnit": "%",
+  "homeScreenWeatherCodeTitle": "Weather Code: "
 }

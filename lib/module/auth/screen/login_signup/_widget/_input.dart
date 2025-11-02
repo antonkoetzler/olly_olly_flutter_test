@@ -3,20 +3,43 @@ part of '../widget/login_signup_screen.dart';
 /// Generic input of [LoginSignupScreen].
 final class _Input extends StatelessWidget {
   /// Default constructor.
-  const _Input(this._label, this._focusNode, [this._neighborFocusNode]);
+  const _Input({
+    required this.label,
+    required this.controller,
+    required this.focusNode,
+    required this.onFieldSubmitted,
+    required this.validator,
+    this.obscureText = false,
+  });
 
   /// Label.
-  final String _label;
+  final String label;
+
+  /// [TextEditingController].
+  final TextEditingController controller;
 
   /// [FocusNode].
-  final FocusNode? _focusNode;
+  final FocusNode focusNode;
 
-  /// [FocusNode] to focus when [Input.onFieldSubmitted] is called.
-  final FocusNode? _neighborFocusNode;
+  /// [Input.onFieldSubmitted].
+  final VoidCallback onFieldSubmitted;
+
+  /// Validator.
+  final String? Function() validator;
+
+  /// [Input.obscureText].
+  final bool obscureText;
 
   /// Build function.
   @override
   Widget build(_) {
-    return Input(label: _label, focusNode: _focusNode, onFieldSubmitted: _neighborFocusNode != null ? (_) => _neighborFocusNode.requestFocus() : null);
+    return Input(
+      label: label,
+      controller: controller,
+      focusNode: focusNode,
+      onFieldSubmitted: (_) => onFieldSubmitted(),
+      validator: (_) => validator(),
+      obscureText: obscureText,
+    );
   }
 }

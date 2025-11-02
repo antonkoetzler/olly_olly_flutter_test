@@ -35,6 +35,7 @@ final class Button extends StatelessWidget {
     final border = themeExtension.border;
     final borderRadius = themeExtension.borderRadius;
     final contentPadding = themeExtension.contentPadding;
+    final textStyle = themeExtension.textStyle;
 
     return Provider(
       create: (_) => getIt<ButtonViewModel>(param1: onTapUp),
@@ -53,34 +54,37 @@ final class Button extends StatelessWidget {
             cursor: onTapProvided ? SystemMouseCursors.click : SystemMouseCursors.basic,
             onEnter: onTapProvided ? (_) => onEnter() : null,
             onExit: onTapProvided ? (_) => onExit() : null,
-            child: ValueListenableBuilder(
-              valueListenable: tapStatusController,
-              builder: (_, tapStatus, _) {
-                return Container(
-                  padding: contentPadding,
-                  decoration: BoxDecoration(
-                    color: switch (tapStatus) {
-                      TapStatusEnum.idle => idleBackgroundColor,
-                      TapStatusEnum.hover => hoverBackgroundColor,
-                      TapStatusEnum.click => clickBackgroundColor,
-                    },
-                    border: border,
-                    borderRadius: borderRadius,
-                  ),
-                  child: GestureDetector(
-                    onTapDown: onTapProvided ? (_) => onTapDown() : null,
-                    onTapUp: onTapProvided ? (_) => onTapUp() : null,
-                    onTapCancel: onTapCancel,
+            child: GestureDetector(
+              onTapDown: onTapProvided ? (_) => onTapDown() : null,
+              onTapUp: onTapProvided ? (_) => onTapUp() : null,
+              onTapCancel: onTapCancel,
+              child: ValueListenableBuilder(
+                valueListenable: tapStatusController,
+                builder: (_, tapStatus, _) {
+                  return Container(
+                    padding: contentPadding,
+                    decoration: BoxDecoration(
+                      color: switch (tapStatus) {
+                        TapStatusEnum.idle => idleBackgroundColor,
+                        TapStatusEnum.hover => hoverBackgroundColor,
+                        TapStatusEnum.click => clickBackgroundColor,
+                      },
+                      border: border,
+                      borderRadius: borderRadius,
+                    ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         if (icon != null) Icon(icon, size: iconSize),
-                        if (text.isNotEmpty) Expanded(child: Text(text, textAlign: TextAlign.center)),
+                        if (text.isNotEmpty)
+                          Expanded(
+                            child: Text(text, textAlign: TextAlign.center, style: textStyle),
+                          ),
                       ],
                     ),
-                  ),
-                );
-              },
+                  );
+                },
+              ),
             ),
           );
         },

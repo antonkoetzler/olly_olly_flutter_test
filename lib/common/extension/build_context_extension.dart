@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:olly_olly_flutter_test/olly_olly_flutter_test.dart';
 
 /// Extension on [BuildContext].
 extension BuildContextExtension on BuildContext {
-  /// Get the [AppLocalizations] instance.
-  AppLocalizations get localizations {
-    return AppLocalizations.of(this)!;
-  }
-
   /// Resolves a [ThemeExtension] and throws a [StateError]
   /// if the [ThemeExtension] isn't apart of the [BuildContext].
   T resolveThemeExtension<T extends ThemeExtension<T>>() {
@@ -17,5 +11,15 @@ extension BuildContextExtension on BuildContext {
       '[MyoroBuildContextExtension.resolveThemeExtension]: [ThemeExtension] of type [$T] is not registered in the theme.'
       'Make sure the [ThemeExtension] is included in the theme extensions list when creating the [ThemeData].',
     );
+  }
+
+  /// Shows a snack bar.
+  void showSnackBar(String message) {
+    ScaffoldMessenger.of(this).showSnackBar(SnackBar(behavior: SnackBarBehavior.floating, content: Text(message)));
+  }
+
+  /// Closes the snack bar (if any is open).
+  void hideSnackBar() {
+    ScaffoldMessenger.of(this).hideCurrentSnackBar();
   }
 }

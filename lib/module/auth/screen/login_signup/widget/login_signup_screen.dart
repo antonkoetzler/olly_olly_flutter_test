@@ -7,8 +7,8 @@ part '../_widget/_input.dart';
 part '../_widget/_buttons.dart';
 part '../_widget/_action_button.dart';
 part '../_widget/_logo.dart';
-part '../_widget/_theme_toggle_button.dart';
 part '../_widget/_inputs.dart';
+part '../_widget/_form_switcher_button.dart';
 
 /// Login signup screen.
 final class LoginSignupScreen extends StatelessWidget {
@@ -20,7 +20,7 @@ final class LoginSignupScreen extends StatelessWidget {
   Widget build(_) {
     return Provider(
       create: (_) => getIt<LoginSignupScreenViewModel>(),
-      child: const SafeArea(child: Scaffold(body: _Body())),
+      child: const Scaffold(body: _Body()),
     );
   }
 }

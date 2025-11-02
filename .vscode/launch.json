@@ -1,0 +1,41 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "deviceId": "${input:deviceId}"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "deviceId",
+      "type": "pickString",
+      "description": "Select device",
+      "options": [
+        {
+          "label": "Web",
+          "value": "chrome"
+        },
+        {
+          "label": "macOS",
+          "value": "macos"
+        },
+        {
+          "label": "Windows",
+          "value": "windows"
+        },
+        {
+          "label": "Linux",
+          "value": "linux"
+        },
+        {
+          "label": "Automatic (runs on connected device)",
+          "value": ""
+        }
+      ]
+    }
+  ]
+}

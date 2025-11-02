@@ -14,23 +14,26 @@ final class _Body extends StatelessWidget {
 
     final themeExtension = context.resolveThemeExtension<LoginSignupScreenThemeExtension>();
     final bodyPadding = themeExtension.bodyPadding;
+    final inputsButtonsSpacing = themeExtension.inputsButtonsSpacing;
 
     return ValueListenableBuilder(
       valueListenable: modeController,
       builder: (_, mode, _) {
         return Padding(
           padding: bodyPadding,
-          child: Column(
-            children: [
-              Expanded(
-                child: Center(
-                  child: SingleChildScrollView(
-                    child: Column(mainAxisSize: MainAxisSize.min, mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [const _Logo(), _Inputs(mode)]),
-                  ),
-                ),
+          child: Center(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const _Logo(),
+                  _Inputs(mode),
+                  SizedBox(height: inputsButtonsSpacing),
+                  _Buttons(mode),
+                ],
               ),
-              _Buttons(mode),
-            ],
+            ),
           ),
         );
       },

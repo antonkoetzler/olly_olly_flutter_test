@@ -11,15 +11,18 @@ final class _ActionButton extends StatelessWidget {
   /// Build function.
   @override
   Widget build(context) {
-    final localizations = context.localizations;
     final loginSignupScreenLoginActionButtonLabel = localizations.loginSignupScreenLoginActionButtonLabel;
     final loginSignupScreenSignupActionButtonLabel = localizations.loginSignupScreenSignupActionButtonLabel;
+
+    final viewModel = context.read<LoginSignupScreenViewModel>();
+    final validator = viewModel.validator;
 
     return Button(
       text: switch (_mode) {
         LoginSignupScreenModeEnum.login => loginSignupScreenLoginActionButtonLabel,
         LoginSignupScreenModeEnum.signup => loginSignupScreenSignupActionButtonLabel,
       },
+      onTapUp: validator,
     );
   }
 }

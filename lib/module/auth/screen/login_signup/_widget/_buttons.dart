@@ -13,16 +13,27 @@ final class _Buttons extends StatelessWidget {
   Widget build(context) {
     final themeExtension = context.resolveThemeExtension<LoginSignupScreenThemeExtension>();
     final buttonsSpacing = themeExtension.buttonsSpacing;
+    final themeToggleButtonIconSize = themeExtension.themeToggleButtonIconSize;
 
-    return IntrinsicHeight(
-      child: Row(
-        spacing: buttonsSpacing,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Expanded(child: _ActionButton(_mode)),
-          const _ThemeToggleButton(),
-        ],
-      ),
+    final viewModel = context.read<LoginSignupScreenViewModel>();
+    final state = viewModel.state;
+    final loadingController = state.loadingController;
+
+    return ValueListenableBuilder(
+      valueListenable: loadingController,
+      builder: (_, loading, _) => loading
+          ? const Loading()
+          : IntrinsicHeight(
+              child: Row(
+                spacing: buttonsSpacing,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Expanded(child: _ActionButton(_mode)),
+                  Expanded(child: _FormSwitcherButton(_mode)),
+                  ThemeToggleButton(iconSize: themeToggleButtonIconSize),
+                ],
+              ),
+            ),
     );
   }
 }

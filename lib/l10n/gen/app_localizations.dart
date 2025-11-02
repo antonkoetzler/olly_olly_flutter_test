@@ -63,8 +63,7 @@ import 'app_localizations_pt.dart';
 /// be consistent with the languages listed in the AppLocalizations.supportedLocales
 /// property.
 abstract class AppLocalizations {
-  AppLocalizations(String locale)
-    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  AppLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -72,8 +71,7 @@ abstract class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate =
-      _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -85,26 +83,21 @@ abstract class AppLocalizations {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
-      <LocalizationsDelegate<dynamic>>[
-        delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ];
-
-  /// A list of this localizations delegate's supported locales.
-  static const List<Locale> supportedLocales = <Locale>[
-    Locale('en'),
-    Locale('es'),
-    Locale('pt'),
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
+    delegate,
+    GlobalMaterialLocalizations.delegate,
+    GlobalCupertinoLocalizations.delegate,
+    GlobalWidgetsLocalizations.delegate,
   ];
 
-  /// No description provided for @loginSignupScreenLoginUsernameOrEmailLabel.
+  /// A list of this localizations delegate's supported locales.
+  static const List<Locale> supportedLocales = <Locale>[Locale('en'), Locale('es'), Locale('pt')];
+
+  /// No description provided for @loginSignupScreenLoginNameLabel.
   ///
   /// In en, this message translates to:
-  /// **'Username or email'**
-  String get loginSignupScreenLoginUsernameOrEmailLabel;
+  /// **'Name'**
+  String get loginSignupScreenLoginNameLabel;
 
   /// No description provided for @loginSignupScreenLoginPasswordLabel.
   ///
@@ -115,18 +108,335 @@ abstract class AppLocalizations {
   /// No description provided for @loginSignupScreenLoginActionButtonLabel.
   ///
   /// In en, this message translates to:
-  /// **'Sign In'**
+  /// **'Enter'**
   String get loginSignupScreenLoginActionButtonLabel;
 
   /// No description provided for @loginSignupScreenSignupActionButtonLabel.
   ///
   /// In en, this message translates to:
-  /// **'Sign Up'**
+  /// **'Register'**
   String get loginSignupScreenSignupActionButtonLabel;
+
+  /// No description provided for @loginSignupScreenLoginFormSwitcherButtonLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Signup'**
+  String get loginSignupScreenLoginFormSwitcherButtonLabel;
+
+  /// No description provided for @loginSignupScreenSignupFormSwitcherButtonLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Login'**
+  String get loginSignupScreenSignupFormSwitcherButtonLabel;
+
+  /// No description provided for @loginSignupScreenLoginNameValidator.
+  ///
+  /// In en, this message translates to:
+  /// **'Name is required'**
+  String get loginSignupScreenLoginNameValidator;
+
+  /// No description provided for @loginSignupScreenLoginPasswordValidator.
+  ///
+  /// In en, this message translates to:
+  /// **'Password is required'**
+  String get loginSignupScreenLoginPasswordValidator;
+
+  /// No description provided for @loginSignupScreenSignupNameLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get loginSignupScreenSignupNameLabel;
+
+  /// No description provided for @loginSignupScreenSignupPasswordLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get loginSignupScreenSignupPasswordLabel;
+
+  /// No description provided for @loginSignupScreenSignupConfirmPasswordLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm password'**
+  String get loginSignupScreenSignupConfirmPasswordLabel;
+
+  /// No description provided for @loginSignupScreenSignupNameValidator.
+  ///
+  /// In en, this message translates to:
+  /// **'Name is required'**
+  String get loginSignupScreenSignupNameValidator;
+
+  /// No description provided for @loginSignupScreenSignupNameInvalidValidator.
+  ///
+  /// In en, this message translates to:
+  /// **'Name must contain only letters and numbers'**
+  String get loginSignupScreenSignupNameInvalidValidator;
+
+  /// No description provided for @loginSignupScreenSignupPasswordValidator.
+  ///
+  /// In en, this message translates to:
+  /// **'Password is required'**
+  String get loginSignupScreenSignupPasswordValidator;
+
+  /// No description provided for @loginSignupScreenSignupConfirmPasswordValidator.
+  ///
+  /// In en, this message translates to:
+  /// **'Passwords do not match'**
+  String get loginSignupScreenSignupConfirmPasswordValidator;
+
+  /// No description provided for @loginSignupScreenSuccessMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Logged in successfully!'**
+  String get loginSignupScreenSuccessMessage;
+
+  /// No description provided for @homeScreenAppBarTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome, {name}'**
+  String homeScreenAppBarTitle(String name);
+
+  /// No description provided for @homeScreenLocationPermissionStatusDisabledLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Location services are disabled'**
+  String get homeScreenLocationPermissionStatusDisabledLabel;
+
+  /// No description provided for @homeScreenLocationPermissionStatusDeniedLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permissions are denied'**
+  String get homeScreenLocationPermissionStatusDeniedLabel;
+
+  /// No description provided for @homeScreenLocationPermissionStatusDeniedForeverLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permissions are permanently denied'**
+  String get homeScreenLocationPermissionStatusDeniedForeverLabel;
+
+  /// No description provided for @homeScreenErrorRetryButtonText.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get homeScreenErrorRetryButtonText;
+
+  /// No description provided for @errorInvalidUser.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid user.'**
+  String get errorInvalidUser;
+
+  /// No description provided for @errorUserAlreadyExists.
+  ///
+  /// In en, this message translates to:
+  /// **'User already exists.'**
+  String get errorUserAlreadyExists;
+
+  /// No description provided for @errorLoginFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Login failed: {error}'**
+  String errorLoginFailed(String error);
+
+  /// No description provided for @errorSignupFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Signup failed: {error}'**
+  String errorSignupFailed(String error);
+
+  /// No description provided for @errorLogoutFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Logout failed: {error}'**
+  String errorLogoutFailed(String error);
+
+  /// No description provided for @errorInvalidResponseFormat.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid response format: missing current_weather data'**
+  String get errorInvalidResponseFormat;
+
+  /// No description provided for @errorFailedToParseWeatherData.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to parse weather data: {error}'**
+  String errorFailedToParseWeatherData(String error);
+
+  /// No description provided for @errorFailedToLoadWeatherData.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load weather data: HTTP {statusCode}'**
+  String errorFailedToLoadWeatherData(int statusCode);
+
+  /// No description provided for @errorNetworkError.
+  ///
+  /// In en, this message translates to:
+  /// **'Network error: {error}'**
+  String errorNetworkError(String error);
+
+  /// No description provided for @errorUnexpectedError.
+  ///
+  /// In en, this message translates to:
+  /// **'Unexpected error: {error}'**
+  String errorUnexpectedError(String error);
+
+  /// No description provided for @errorUnexpectedErrorOccurred.
+  ///
+  /// In en, this message translates to:
+  /// **'An unexpected error occurred: {error}'**
+  String errorUnexpectedErrorOccurred(String error);
+
+  /// No description provided for @weatherConditionSunny.
+  ///
+  /// In en, this message translates to:
+  /// **'Sunny'**
+  String get weatherConditionSunny;
+
+  /// No description provided for @weatherConditionPartlyCloudy.
+  ///
+  /// In en, this message translates to:
+  /// **'Partly Cloudy'**
+  String get weatherConditionPartlyCloudy;
+
+  /// No description provided for @weatherConditionCloudy.
+  ///
+  /// In en, this message translates to:
+  /// **'Cloudy'**
+  String get weatherConditionCloudy;
+
+  /// No description provided for @weatherConditionFoggy.
+  ///
+  /// In en, this message translates to:
+  /// **'Foggy'**
+  String get weatherConditionFoggy;
+
+  /// No description provided for @weatherConditionDrizzle.
+  ///
+  /// In en, this message translates to:
+  /// **'Drizzle'**
+  String get weatherConditionDrizzle;
+
+  /// No description provided for @weatherConditionRain.
+  ///
+  /// In en, this message translates to:
+  /// **'Raining'**
+  String get weatherConditionRain;
+
+  /// No description provided for @weatherConditionSnow.
+  ///
+  /// In en, this message translates to:
+  /// **'Snowing'**
+  String get weatherConditionSnow;
+
+  /// No description provided for @weatherConditionThunderstorm.
+  ///
+  /// In en, this message translates to:
+  /// **'Thunderstorm'**
+  String get weatherConditionThunderstorm;
+
+  /// No description provided for @weatherConditionUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown'**
+  String get weatherConditionUnknown;
+
+  /// No description provided for @homeScreenTemperatureUnit.
+  ///
+  /// In en, this message translates to:
+  /// **'°C'**
+  String get homeScreenTemperatureUnit;
+
+  /// No description provided for @homeScreenConditionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Condition: '**
+  String get homeScreenConditionTitle;
+
+  /// No description provided for @homeScreenMaxTemperatureTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Max: '**
+  String get homeScreenMaxTemperatureTitle;
+
+  /// No description provided for @homeScreenMinTemperatureTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Min: '**
+  String get homeScreenMinTemperatureTitle;
+
+  /// No description provided for @homeScreenTemperatureSeparator.
+  ///
+  /// In en, this message translates to:
+  /// **' / '**
+  String get homeScreenTemperatureSeparator;
+
+  /// No description provided for @homeScreenWindSpeedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Wind Speed: '**
+  String get homeScreenWindSpeedTitle;
+
+  /// No description provided for @homeScreenWindSpeedUnit.
+  ///
+  /// In en, this message translates to:
+  /// **' km/h'**
+  String get homeScreenWindSpeedUnit;
+
+  /// No description provided for @homeScreenHumidityTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Humidity: '**
+  String get homeScreenHumidityTitle;
+
+  /// No description provided for @homeScreenHumidityUnit.
+  ///
+  /// In en, this message translates to:
+  /// **'%'**
+  String get homeScreenHumidityUnit;
+
+  /// No description provided for @homeScreenPrecipitationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Precipitation: '**
+  String get homeScreenPrecipitationTitle;
+
+  /// No description provided for @homeScreenPrecipitationUnit.
+  ///
+  /// In en, this message translates to:
+  /// **' mm'**
+  String get homeScreenPrecipitationUnit;
+
+  /// No description provided for @homeScreenPrecipitationSumTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Precipitation Sum: '**
+  String get homeScreenPrecipitationSumTitle;
+
+  /// No description provided for @homeScreenPrecipitationSumUnit.
+  ///
+  /// In en, this message translates to:
+  /// **' mm'**
+  String get homeScreenPrecipitationSumUnit;
+
+  /// No description provided for @homeScreenCloudCoverTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cloud Cover: '**
+  String get homeScreenCloudCoverTitle;
+
+  /// No description provided for @homeScreenCloudCoverUnit.
+  ///
+  /// In en, this message translates to:
+  /// **'%'**
+  String get homeScreenCloudCoverUnit;
+
+  /// No description provided for @homeScreenWeatherCodeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Weather Code: '**
+  String get homeScreenWeatherCodeTitle;
 }
 
-class _AppLocalizationsDelegate
-    extends LocalizationsDelegate<AppLocalizations> {
+class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
   const _AppLocalizationsDelegate();
 
   @override
@@ -135,8 +445,7 @@ class _AppLocalizationsDelegate
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['en', 'es', 'pt'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'es', 'pt'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
