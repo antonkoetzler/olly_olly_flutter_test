@@ -10,7 +10,7 @@ Simple weather application with authentication.
 
 ## Running the project
 
-Project can be run with `flutter run`. However, a debug launch configurations are available when using VSCode or a VSCode fork.
+Project can be run with `flutter run`. However, debug launch configurations are available when using VSCode or a VSCode fork.
 
 ## Project architecture
 
